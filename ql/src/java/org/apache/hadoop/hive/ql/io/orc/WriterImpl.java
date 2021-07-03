@@ -199,6 +199,8 @@ class WriterImpl implements Writer, MemoryManager.Callback {
 
     // ensure that we are able to handle callbacks before we register ourselves
     memoryManager.addWriter(path, stripeSize, this);
+    // ensure inprogress file created
+    getStream();
   }
 
   int getEstimatedBufferSize(int bs) {
